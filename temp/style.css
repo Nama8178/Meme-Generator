@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+:root{
+    --secondary: #499557;
+}
+body{
+    height: calc(100vh - 55.8px);
+}
+/* navBar  */
+header{
+    position: sticky;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 55.8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.navDiv{
+    flex: 1;
+    cursor: pointer;
+}
+
+.logo{
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.navBarBtn{
+    color: rgb(42, 42, 42);
+    border-radius: 100%;
+    padding: 1px;
+    aspect-ratio: 1;
+    height: 35px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.currTool{
+    font-family: "Open Sans", sans-serif;
+    color: rgb(37, 37, 37);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.userAuth{
+    width: fit-content;
+    position: relative;
+    display: flex;
+    margin-left: auto ;
+    gap: 5px;
+}
+.userAuth div{
+    height: 35px;
+}
+.prememum{
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 2px;
+    background: var(--secondary);
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-wrap: nowrap;
+}
+.prememum i{
+    font-size: 1rem;
+}
+.mobileNavPrimium{
+    display: none;
+}
+.len img{
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/* End Nav Bar  */
+
+/* Main start  */
+
+main{
+    display: flex;
+    height: 100%;
+}
+
+/* Sidebar Start  */
+
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 100%;
+    text-transform: capitalize;
+    transition: width 0.1s ease-in-out;
+    text-wrap: nowrap;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.sideBarItem:hover{
+    cursor: pointer;
+    background-color: rgb(233, 233, 233);
+}
+.closeText h3{
+    display: none;
+}
+.sideBar h3{
+    font-size: 1.03rem;
+}
+.toolList{
+    width: 100%;
+    /* border-bottom: 1px solid gray; */
+}
+.toolList .tool{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+.tool button{
+    color: white;
+}
+
+.quillPremium{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: #FFD700;
+    /* border-bottom: 1px solid gray; */
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.quillPremium i{
+    color: #FFD700;
+}
+
+.userSupport{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    justify-content: space-between;
+}
+.helpUs,.contact{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: rgb(53, 53, 53);
+}
+.helpUs i,.contact i{
+    color: gray;
+}
+.helpUs h3,.contact h3{
+    font-size: 1.03rem;
+}
+.version{
+    padding: 10px;
+}
+
+/* sidebar for mobile view  */
+
+#toggleMobileNavBar{
+    display: none;
+}
+.sideNavBar{
+    position: fixed;
+    top: 0;
+    width: 0px;
+    height: 100vh;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    background-color: #fff;
+    right: 0;
+    transition: all 0.2s ease;
+}
+.navItem{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+
+@media only screen and (max-width: 900px) {
+    #toggleBtn{
+        display: none;
+    }
+    #toggleMobileNavBar{
+        display: block;
+        transition: all 0.2s ease;
+    }
+    .currTool,.quillPremium,.userSupport{
+        display: none;
+    }
+    main{
+        flex-direction: column;
+        width: 100%;
+    }
+    .sideNavBar h3{
+        font-size: 1.05rem;
+        display: inline;
+        text-transform: capitalize;
+    }
+    .sideBar{
+        height: 60px;
+        width: 100%;
+        flex-direction: row;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    }
+    .toolList{
+        width: 100%;
+        height: 60px;
+        display: flex;
+        gap: 10px;
+        justify-content: space-evenly;
+        overflow-x: scroll;
+    }
+    .sideBar h3{
+        display: none;
+    }
+    .userAuth{
+        display: none;
+    }
+    .mobileNavPrimium{
+        font-size: 0.5rem;
+        text-wrap: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        background: var(--secondary);
+        padding: 10px;
+        width: 145px;
+        color: white;
+        border-radius: 20px;
+    }
+    .mobileNavPrimium h3{
+        text-wrap: nowrap;
+    }
+    .mobileButton{
+        display: flex;
+        gap: 10px;
+        width: 250px;
+        justify-content: flex-end;
+    }
+    #toggleMobileNavBar{
+        z-index: 20;
+    }
+}
+
+/* Sidebar End */
+
+/* Tool Area start */
+
+.toolArea{
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.toolArea::-webkit-scrollbar {
+    display: none;
+}
+
+.toolWorkingSection{
+    background-color: #f1f1f1;
+    width: 100%;
+    padding: 50px;
+    padding-top: 30px;
+}
+.workingBox{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+.userInteractiveArea{
+    border-radius: 0px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 20px 0px;
+}
+.lenOptions{
+    background-color: #f1f1f1;
+}
+.lenOptions h3{
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px;
+    padding-bottom: 10px;
+    color: #505050;
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.lenOptions h3:hover{
+    background: white;
+}
+.modes{
+    display: flex;
+    padding: 10px;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid #DEE1E3;
+}
+.modes span,.modes div{
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+.mode{
+    color: var(--secondary);
+}
+.writingArea{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.writingArea textarea {
+    outline: none;
+    border: none;
+    padding: 20px;
+    height: auto;
+    resize: none;
+    min-height: calc(50vh - 0px);
+    width: 100%;
+    font-size: 0.9rem;
+    overflow: hidden;
+    color: #505050;
+}
+.inputArea{
+    flex: 1;
+    position: relative;
+    border: 1px solid #ccc; 
+}
+.placeholderBox {
+    position: absolute;
+    color: #999; /* Placeholder color */
+    font-style: italic;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    gap: 20px;
+  }
+  .placeholderItem{
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6%;
+    font-weight: 400;
+    color: var(--secondary) ;
+    border: 1.5px solid var(--secondary);
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .placeholderItem h4{
+    font-size: 0.9rem;
+  }
+  .emoji{
+    font-size: 1.5rem;
+  }
+
+.toolFuntionality{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.toolFuntionality i{
+    color: #505050;
+}
+.uploadDoc{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-wrap: nowrap;
+    color: #383838;
+}
+.uploadDoc i{
+    font-size: 1.2rem;
+}
+.toolBtn{
+    cursor: pointer;
+}
+
+  
+.outputArea {
+    flex: 1; 
+    border: 1px solid #ccc; 
+    padding: 20px; 
+}
+
+/* Tool Area End */

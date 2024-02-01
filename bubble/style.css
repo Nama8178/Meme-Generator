@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Afacad&family=Exo:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Exo', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(127, 170, 127);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+#container{
+    height: 81%;
+    width: 80%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+#np{
+    height: 15%;
+    width: 100%;
+    background: rgb(34, 70, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.temp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40%;
+    width: 40%;
+}
+.score{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    margin-left: -10px;
+}
+.show{
+    font-family: 'Afacad', sans-serif;
+    border-radius: 10%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    background: white;
+}
+.temp h2{
+    font-weight: 200;
+    color: white;
+}
+.playBoard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    height: 75%;
+    width: 100%;
+    /* margin-right: -2rem;*/
+    font-size: 40px;
+    margin-left: -1px; 
+}
+#bubble{
+    margin: 4px 4px 4px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(27, 116, 50);
+    font-family: 'Afacad', sans-serif;
+    font-size: 15px;
+    color: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+#bubble:hover{
+    cursor: pointer;
+    background: rgb(2, 36, 11);
+}
+#logo img{
+    height: 40px;
+    width: 40px;
+}
+.other{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.other li{
+    margin-right: 15px;
+    list-style: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.flex{
+    display: flex;
+}
+.justify-between{
+    justify-content: space-between;
+}
+nav{
+    height: 15%;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+#check{
+    display: none;
+}
+.music ul{
+    padding-top: 4%;
+    padding-left: 3%;
+    position: absolute;
+    background: rgb(72, 117, 72);
+    height: 300px;
+    width: 150px;
+    top: 15%;
+    right: -100%;
+    list-style: radial-gradient(white,rgb(72, 117, 72));
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+.music ul li{
+    margin-bottom: 20px;
+}
+#check:checked ~ ul{
+    right: 3%;
+}
+.items-center{
+    align-items: center;
+}
+.btn{
+    color: white;
+    background: none;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 4px 4px 4px 4px;
+    font-size: 25px;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    background-color: white;
+    color: rgb(72, 117, 72);;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="flex justify-between">
+        <div class="other flex">
+            <li id="logo"><img src="https://freepngimg.com/thumb/bubbles/25314-8-bubbles-photos-thumb.png" alt="logo"></li>
+            <li style="color: #ffffff;">Bubble Match</li>
+        </div>
+        <div class="music"> 
+            <input type="checkbox"  id="check">
+            <label for="check">
+                <i id="menu" class="fa-solid fa-bars" style="color: #ffffff; font-size: 50px; margin-right: 40px;"></i>
+            </label>
+            <ul class="n">
+                <li><i id="volIcn" onclick="playpause()" class="fa-solid fa-volume-high fa-2xl" style="color: #ffffff; font-size: 40px;"></i></li>
+                <li><button class="restart btn" onclick="restart()">Restart</button></li>
+            </ul>
+            <audio id="song" src="music file/game audio.mp3"></audio>
+        </div>
+    </nav>
+    <div id="container">
+        <div id="np">
+            <div class="temp">
+                 <div class="score" ><h2>Hit</h2>
+                     <div class="show" id="hit"> 2</div>
+                 </div>
+                 <div class="score"><h2>Timer</h2>
+                     <div id="timerval"class="show" > 60</div>
+                 </div>
+                 <div class="score"><h2>Score</h2>
+                     <div class="show" id="score"> 0</div>
+                 </div>
+                
+                
+            </div>
+        </div>
+        <div class="playBoard">
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/03c101c2b4.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

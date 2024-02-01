@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <script src="https://kit.fontawesome.com/03c101c2b4.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: black;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            background-color: rgb(255, 201, 201);
+            margin: 5px 5px 5px 5px;
+            padding: 25px 35px;
+            text-align: center;
+        }
+
+        .upper_container {
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+       #circle{
+           border-radius: 50%;
+           width: 40px;
+           height: 40px;
+           line-height: 40px;
+           background-color: #fff;
+           color: #f53192;
+           box-shadow: 0 5px 10px rgba(182, 93, 93, 0.616);
+        }
+        .song_img{
+          width: 220px;
+          height: 230px ;
+          border-radius: 50%;
+          border: 8px solid #fff;
+          box-shadow: 0px 5px 5px  rgba(182, 93, 93, 0.616);
+        }
+        .container h1{
+            font-size: 28px;
+            font-weight: 400;
+            color: #000000;
+            margin-top: 20px;
+        }
+        .container p{
+            font-size: 18px;
+            color: #000000;
+        }
+        #progress{
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #f53192;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 40px 0;
+        }
+        #progress::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            background: #f53192;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 8px solid #fff;
+            box-shadow: 0 5px 5px  rgba(182, 93, 93, 0.616);
+        }
+        .controls{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .controls div{
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+            background: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #f53192;
+            box-shadow: 0 10px 20px rgba(182, 93, 93, 0.616);
+            cursor: pointer;
+        }
+        .controls div:nth-child(2){
+            transform: scale(1.5);
+            background: #f53192;
+            color: #fff;
+        }
+</style>
+</head>
+
+<body>
+    <div class="upper_container">
+        <div class="container">
+            <nav>
+                <div id="circle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div id="circle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <img src="wp4035874.jpg" class="song_img">
+            <h1>Attention</h1>
+            <p>Charlie Puth</p>
+
+
+            <audio id="song">
+                <source src="Attention-(PagalWorld).mp3" type="audio/mpeg">
+            </audio>
+            <input type="range" value="0" id="progress">
+            <div class="controls">
+                <div><i class="fa-solid fa-backward"></i></div>
+                <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+                <div><i class="fa-solid fa-forward"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let progress = document.getElementById("progress");
+        let song = document.getElementById("song");
+        let ctrlIcon = document.getElementById("ctrlIcon");
+        song.play();
+
+        song.onloadedmetadata = function(){
+            progress.max = song.duration;
+            progress.value =  song.currentTime;
+        }
+        
+        function playPause(){
+            if(ctrlIcon.classList.contains("fa-pause")){
+                song.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+            }
+            else{
+                song.play();
+                ctrlIcon.classList.remove("fa-play");
+                ctrlIcon.classList.add("fa-pause");
+            }
+        }
+        if(song.play()){
+            setInterval(()=>{
+                progress.value = song.currentTime;
+            },500);
+        }
+
+        progress.onchange = function(){
+            song.play();
+            song.currentTime = progress.value;
+            ctrlIcon.classList.add("fa-pause");
+            ctrlIcon.classList.remove("fa-play");
+        }
+    </script>
+</body>
+</html>
