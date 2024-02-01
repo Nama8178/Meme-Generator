@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    p{
+        opacity: 0;
+    }
+    .fade{
+        opacity: 1;
+        transition: 1.5s;
+    }
+</style>
+<body>
+    <div class="flex justify-center items-center bg-amber-400 h-screen">
+        <div class="bg-black max-h-fit overflow-hidden w-1/5 rounded-lg flex p-5 items-center flex-col" >
+            <h1 class="text-white text-5xl ">😂</h1>
+            <p class="text-white text-xs mt-7 m-2" id="joke"></p>
+            <button class="bg-amber-400 font-medium text-black pt-2 p-3 rounded-3xl transition hover:bg-black hover:text-amber-400 border-solid border-2 border-amber-400" onclick="getJoke()">Generate joke</button>
+        </div>
+    </div>  
+    <script src="script.js"></script>  
+</body>
+</html>
