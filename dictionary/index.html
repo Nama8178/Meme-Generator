@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container flex justify-center items-center">
+        <div class="box">
+            <div class="b1 flex">
+                <input type="text" id="inp" placeholder="Enter the word ">
+                <button id="btn" onclick="get()">Search</button>
+            </div>
+            <div class="voice">
+                <div style="display: flex; flex-direction: column;">
+                    <h3 id="sample"></h3>
+                    <p id="speech" style="font-size: small; color: rgba(0, 0, 0, 0.623);"></p>
+                </div>
+                <button style="background:transparent; border: none;" onclick="playSound()">
+                    <i class="fa-solid fa-volume-high" style="color: #693fe7c7;"></i>
+                </button> 
+                <div class="in" style="display: none;">   
+                    <audio id="sound" src="" ></audio>
+                </div>    
+            </div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: left; width: 90%; margin-top: 18px;">
+                <h5 id="op"></h5>
+            </div>
+            <div class="example">
+                <div style="width: 8px; background: #693fe7c7;"></div>
+                <p id="para"></p>
+            </div>
+        </div>    
+    </div>
+    <script src="https://kit.fontawesome.com/03c101c2b4.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
